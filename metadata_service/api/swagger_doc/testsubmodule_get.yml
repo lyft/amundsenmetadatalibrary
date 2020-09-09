@@ -1,0 +1,11 @@
+Simple test that returns an empty response
+---
+tags:
+  - 'testsubmodule'
+responses:
+  200:
+    description: 'Empty response'
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/EmptyResponse'

@@ -17,6 +17,7 @@ from flask_restful import Api
 from metadata_service.api.column import ColumnDescriptionAPI
 from metadata_service.api.dashboard import DashboardDetailAPI, DashboardDescriptionAPI, DashboardTagAPI
 from metadata_service.api.healthcheck import healthcheck
+from metadata_service.api.testsubmodule import testsubmodule
 from metadata_service.api.popular_tables import PopularTablesAPI
 from metadata_service.api.system import Neo4jDetailAPI
 from metadata_service.api.table \
@@ -83,6 +84,7 @@ def create_app(*, config_module_class: str) -> Flask:
 
     api_bp = Blueprint('api', __name__)
     api_bp.add_url_rule('/healthcheck', 'healthcheck', healthcheck)
+    api_bp.add_url_rule('/testsubmodule', 'testsubmodule', testsubmodule)
 
     api = Api(api_bp)
 
